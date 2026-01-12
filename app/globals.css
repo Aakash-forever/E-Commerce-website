@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap');
 @import "tailwindcss";
 @import 'lenis/dist/lenis.css';
 @import "tw-animate-css";
+
+@layer base {
+}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -130,4 +134,7 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+body{
+  font-family: 'Source Sans 3', sans-serif;
 }

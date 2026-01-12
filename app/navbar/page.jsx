@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between p-4 bg-white text-black">
+    <nav className="sticky top-0 z-50 flex items-center justify-between p-4 bg-white text-black shadow-md">
       <div className="flex items-center gap-2">
         <svg
           width="140"
