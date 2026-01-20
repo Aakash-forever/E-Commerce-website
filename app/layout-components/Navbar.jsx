@@ -21,13 +21,7 @@ const Navbar = () => {
             xmlns="http://www.w3.org/2000/svg"
             className="h-8 w-auto"
           >
-            <rect
-              x="8"
-              y="4"
-              width="16"
-              height="20"
-              className="fill-[#d4af37]"
-            />
+            <rect x="8" y="4" width="16" height="20" className="fill-[#d4af37]" />
             <rect x="12" y="8" width="8" height="12" className="fill-black" />
             <text
               x="32"
@@ -43,10 +37,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex gap-6">
-          <Link
-            href="/"
-            className="flex items-center gap-2 hover:text-[#b8962e]"
-          >
+          <Link href="/" className="flex items-center gap-2 hover:text-[#b8962e]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -131,10 +122,50 @@ const Navbar = () => {
               )}
             </div>
           </Link>
-         
+
           <AuthSection />
+
+          <button
+            className="md:hidden"
+            onClick={() => setOpen((prev) => !prev)}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              width="26"
+              height="26"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
+              />
+            </svg>
+          </button>
         </div>
       </div>
+
+      {open && (
+        <div className="md:hidden px-4 pb-4 flex flex-col gap-4">
+          <Link
+            href="/"
+            onClick={() => setOpen(false)}
+            className="hover:text-[#b8962e]"
+          >
+            Home
+          </Link>
+          <Link
+            href="/shop"
+            onClick={() => setOpen(false)}
+            className="hover:text-[#b8962e]"
+          >
+            Shop
+          </Link>
+        </div>
+      )}
     </nav>
   );
 };
